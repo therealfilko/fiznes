@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: "fiznes_db"
+      POSTGRES_USER: "filko"
+      POSTGRES_PASSWORD: "mile123"
+    ports:
+      - 5434:5432
