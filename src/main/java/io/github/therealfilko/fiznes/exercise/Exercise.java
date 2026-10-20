@@ -11,7 +11,7 @@ public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -44,7 +44,7 @@ public class Exercise {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

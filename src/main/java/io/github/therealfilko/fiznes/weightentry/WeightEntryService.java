@@ -3,6 +3,7 @@ package io.github.therealfilko.fiznes.weightentry;
 import io.github.therealfilko.fiznes.weightentry.dto.CreateWeightEntryRequest;
 import io.github.therealfilko.fiznes.weightentry.dto.UpdateWeightEntryRequest;
 import io.github.therealfilko.fiznes.weightentry.dto.WeightEntryResponse;
+import org.hibernate.persister.entity.SingleTableEntityPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class WeightEntryService {
         this.weightEntryRepository = weightEntryRepository;
     }
 
-    private WeightEntry findEntityById(Long id) {
+    private WeightEntry findEntityById(Integer id) {
         Optional<WeightEntry> entityOptional = weightEntryRepository.findById(id);
 
         if (entityOptional.isPresent()) {
@@ -35,7 +36,7 @@ public class WeightEntryService {
                         mapToResponse(entry)).toList();
    }
 
-    public WeightEntryResponse getWeightById(Long id) {
+    public WeightEntryResponse getWeightById(Integer id) {
         return mapToResponse(findEntityById(id));
     }
 
@@ -46,14 +47,14 @@ public class WeightEntryService {
         return mapToResponse(weightEntryRepository.save(entity));
     }
 
-    public WeightEntryResponse updateWeightEntryById(Long id, UpdateWeightEntryRequest request) {
+    public WeightEntryResponse updateWeightEntryById(Integer id, UpdateWeightEntryRequest request) {
         WeightEntry entity = findEntityById(id);
         entity.setDatum(request.datum());
         entity.setGewicht(request.gewicht());
         return mapToResponse(weightEntryRepository.save(entity));
     }
 
-    public void deleteWeightEntryById(Long id) {
+    public void deleteWeightEntryById(Integer id) {
        weightEntryRepository.delete(findEntityById(id));
     }
 }

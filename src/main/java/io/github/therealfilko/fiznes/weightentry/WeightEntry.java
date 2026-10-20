@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 
@@ -15,13 +16,13 @@ public class WeightEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @Column(name = "datum", nullable = false)
     private LocalDate datum;
 
     @Column(name = "gewicht", nullable = false)
-    private float gewicht;
+    private BigDecimal gewicht;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -29,16 +30,16 @@ public class WeightEntry {
 
     public WeightEntry() {}
 
-    public WeightEntry(LocalDate datum, float gewicht) {
+    public WeightEntry(LocalDate datum, BigDecimal gewicht) {
         this.datum = datum;
         this.gewicht = gewicht;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -50,11 +51,11 @@ public class WeightEntry {
         this.datum = datum;
     }
 
-    public float getGewicht() {
+    public BigDecimal getGewicht() {
         return gewicht;
     }
 
-    public void setGewicht(float gewicht) {
+    public void setGewicht(BigDecimal gewicht) {
         this.gewicht = gewicht;
     }
 

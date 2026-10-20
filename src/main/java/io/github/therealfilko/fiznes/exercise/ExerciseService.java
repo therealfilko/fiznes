@@ -13,8 +13,8 @@ public class ExerciseService {
         this.exerciseMuscleGroupRepository = exerciseMuscleGroupRepository;
     }
 
-    public ExerciseResponse getExerciseById(long id) {
-        Optional<ExerciseMuscleGroup> exerciseOptional = exerciseMuscleGroupRepository.findById(id);
-        exerciseMuscleGroupRepository.
-    }
+    // public ExerciseResponse getExerciseById(long id) {
+    //     Optional<ExerciseMuscleGroup> exerciseOptional = exerciseMuscleGroupRepository.findById(id);
+    //     exerciseMuscleGroupRepository.
+    // }
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "exercise_muscle_groups")
 public class ExerciseMuscleGroup {
     @EmbeddedId
     private ExerciseMuscleGroupId id;
@@ -17,6 +18,17 @@ public class ExerciseMuscleGroup {
     @ManyToOne
     @MapsId("muscleGroupId")
     private MuscleGroup muscleGroup;
+
+    @Column(name = "type", nullable = false)
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public ExerciseMuscleGroupId getId() {
         return id;

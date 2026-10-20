@@ -9,14 +9,14 @@ import java.util.Objects;
 @Embeddable
 public class ExerciseMuscleGroupId implements Serializable {
     @Column(name = "exercise_id")
-    private long exerciseId;
+    private int exerciseId;
 
     @Column(name = "muscle_group_id")
-    private long muscleGroupId;
+    private int muscleGroupId;
 
     public ExerciseMuscleGroupId() {}
 
-    public ExerciseMuscleGroupId(long exerciseId, long muscleGroupId) {
+    public ExerciseMuscleGroupId(int exerciseId, int muscleGroupId) {
         this.exerciseId = exerciseId;
         this.muscleGroupId = muscleGroupId;
     }
@@ -25,7 +25,7 @@ public class ExerciseMuscleGroupId implements Serializable {
         return exerciseId;
     }
 
-    public void setExerciseId(long exerciseId) {
+    public void setExerciseId(int exerciseId) {
         this.exerciseId = exerciseId;
     }
 
@@ -33,7 +33,7 @@ public class ExerciseMuscleGroupId implements Serializable {
         return muscleGroupId;
     }
 
-    public void setMuscleGroupId(long muscleGroupId) {
+    public void setMuscleGroupId(int muscleGroupId) {
         this.muscleGroupId = muscleGroupId;
     }
 

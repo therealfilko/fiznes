@@ -22,7 +22,7 @@ public class WeightEntryController {
     }
 
     @GetMapping("/{id}")
-    public WeightEntryResponse getWeightById(@PathVariable Long id) {
+    public WeightEntryResponse getWeightById(@PathVariable Integer id) {
         return weightEntryService.getWeightById(id);
     }
 
@@ -33,12 +33,12 @@ public class WeightEntryController {
     }
 
     @PutMapping("/{id}")
-    public WeightEntryResponse updateWeightEntryById(@PathVariable Long id, @RequestBody UpdateWeightEntryRequest request) {
+    public WeightEntryResponse updateWeightEntryById(@PathVariable Integer id, @RequestBody UpdateWeightEntryRequest request) {
         return weightEntryService.updateWeightEntryById(id, request);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteWeightEntryById(@PathVariable Long id) {
+    public void deleteWeightEntryById(@PathVariable Integer id) {
         weightEntryService.deleteWeightEntryById(id);
     }
 }

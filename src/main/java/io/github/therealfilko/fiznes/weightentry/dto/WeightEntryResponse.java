@@ -1,5 +1,6 @@
 package io.github.therealfilko.fiznes.weightentry.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record WeightEntryResponse(Long id, LocalDate datum, float gewicht) {}
+public record WeightEntryResponse(int id, LocalDate datum, BigDecimal gewicht) {}
