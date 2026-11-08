@@ -19,10 +19,19 @@ public class Exercise {
     @Column(name = "equipment", nullable = false)
     private boolean equipment;
 
+
     @OneToMany(
             mappedBy = "exercise"
     )
     private List<ExerciseMuscleGroup> exerciseLinks = new ArrayList<>();
+
+    public List<ExerciseMuscleGroup> getExerciseLinks() {
+        return exerciseLinks;
+    }
+
+    public void setExerciseLinks(List<ExerciseMuscleGroup> exerciseLinks) {
+        this.exerciseLinks = exerciseLinks;
+    }
 
     public boolean isEquipment() {
         return equipment;
@@ -40,7 +49,7 @@ public class Exercise {
         this.name = name;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

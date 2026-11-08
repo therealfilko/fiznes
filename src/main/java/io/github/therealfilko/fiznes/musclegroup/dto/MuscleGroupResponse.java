@@ -1,4 +1,4 @@
 package io.github.therealfilko.fiznes.musclegroup.dto;
 
-public record MuscleGroupResponse(long id, String name, String bodyRegionKey) {
+public record MuscleGroupResponse(int id, String name, String bodyRegionKey, String type) {
 }

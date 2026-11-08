@@ -20,6 +20,14 @@ public class MuscleGroup {
     @Column(name = "body_region_key", nullable = false)
     private String bodyRegionKey;
 
+    public List<ExerciseMuscleGroup> getMuscleGroupLinks() {
+        return muscleGroupLinks;
+    }
+
+    public void setMuscleGroupLinks(List<ExerciseMuscleGroup> muscleGroupLinks) {
+        this.muscleGroupLinks = muscleGroupLinks;
+    }
+
     @OneToMany(
             mappedBy = "muscleGroup"
     )
@@ -34,7 +42,7 @@ public class MuscleGroup {
         this.bodyRegionKey = bodyRegionKey;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

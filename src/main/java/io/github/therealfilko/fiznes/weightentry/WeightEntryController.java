@@ -16,7 +16,7 @@ public class WeightEntryController {
         this.weightEntryService = weightEntryService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<WeightEntryResponse> getWeightEntries() {
         return weightEntryService.getAllWeightEntries();
     }
